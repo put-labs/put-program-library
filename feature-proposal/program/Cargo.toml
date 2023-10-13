@@ -1,0 +1,28 @@
+[package]
+name = "ppl-feature-proposal"
+version = "1.0.0"
+description = "PUT Program Library Feature Proposal Program"
+authors = ["PUT Maintainers <maintainers@put.foundation>"]
+repository = "https://github.com/put-labs/put-program-library"
+license = "Apache-2.0"
+edition = "2018"
+
+[features]
+no-entrypoint = []
+test-bpf = []
+
+[dependencies]
+borsh = "0.9"
+borsh-derive = "0.9.0"
+put-program =  { path = "../../../put/sdk/program", version = "=1.1.0" }
+ppl-token = { version = "1.0.0", path = "../../token/program", features = ["no-entrypoint"] }
+
+[dev-dependencies]
+put-program-test = { path = "../../../put/program-test", version = "=1.1.0" }
+put-sdk = { path = "../../../put/sdk", version = "=1.1.0" } 
+
+[lib]
+crate-type = ["cdylib", "lib"]
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]

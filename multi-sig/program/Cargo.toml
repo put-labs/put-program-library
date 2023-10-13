@@ -1,0 +1,37 @@
+[package]
+name = "ppl-sig"
+description = "PUT Program Library MultiSig Service"
+version = "1.0.0"
+repository = "https://github.com/put-labs/put-program-library"
+authors = [
+  "put <lucas@bonfida.com>",
+  "put Maintainers <maintainers@put.foundation>"
+]
+license = "Apache-2.0"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[features]
+no-entrypoint = []
+test-bpf = []
+testnet = []
+default = []
+
+[dependencies]
+put-program =  { path = "../../../put/sdk/program", version = "=1.1.0" }
+num-traits = "0.2"
+borsh = "0.10.3"
+num-derive = "0.3.3"
+thiserror = "1.0.26"
+lazy_static = "1.4.0"
+
+[dev-dependencies]
+#put-program-test = "1.7.4"
+put-sdk = { path = "../../../put/sdk", version = "=1.1.0"}
+
+[lib]
+crate-type = ["cdylib", "lib"]
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]

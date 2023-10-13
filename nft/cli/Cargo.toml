@@ -1,0 +1,31 @@
+[package]
+authors = ["put Maintainers <maintainers@put.foundation>"]
+description = "PPL-Nft Command-line Utility"
+edition = "2018"
+homepage = "https://ppl.put.com/token"
+license = "Apache-2.0"
+name = "ppl-nft-cli"
+repository = "https://github.com/put-labs/put-program-library"
+version = "1.0.0"
+
+[dependencies]
+clap = "2.33.3"
+console = "0.14.0"
+indicatif = "0.16.2"
+serde = "1.0.130"
+serde_derive = "1.0.103"
+serde_json = "1.0.68"
+
+put-remote-wallet =  { path = "../../../put/remote-wallet", version = "=1.1.0" }
+put-account-decoder =  { path = "../../../put/account-decoder", version = "=1.1.0" }
+put-clap-utils =  { path = "../../../put/clap-utils", version = "=1.1.0" }
+put-cli-config =  { path = "../../../put/cli-config", version = "=1.1.0" }
+put-cli-output =  { path = "../../../put/cli-output", version = "=1.1.0" }
+put-client =  { path = "../../../put/client", version = "=1.1.0" }
+put-logger =  { path = "../../../put/logger", version = "=1.1.0" }
+put-sdk = { path = "../../../put/sdk", version = "=1.1.0" }
+ppl-nft = { version = "1.0.0", path="../program", features = [ "no-entrypoint" ] }
+
+[[bin]]
+name = "ppl-nft"
+path = "src/main.rs"

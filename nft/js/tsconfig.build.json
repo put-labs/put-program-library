@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "strict": false
+  },
+  "include": ["./src",
+    "cli"
+  ],
+  "exclude": ["node_modules", "dist", "build", "lib"]
+}

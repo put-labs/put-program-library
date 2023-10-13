@@ -1,0 +1,29 @@
+[package]
+authors = ["PUT Maintainers <maintainers@put.foundation>"]
+description = "PPL-Token Command-line Utility"
+edition = "2018"
+homepage = "https://spl.put.com/token"
+license = "Apache-2.0"
+name = "ppl-token-cli"
+repository = "https://github.com/put-labs/put-program-library"
+version = "1.0.0"
+
+[dependencies]
+clap = "2.33.3"
+console = "0.14.0"
+serde_json = { version = "1.0.79", features = ["arbitrary_precision"] }
+put-account-decoder =  { path = "../../../put/account-decoder", version = "=1.1.0" } 
+put-clap-utils =  { path = "../../../put/clap-utils", version = "=1.1.0" } 
+put-cli-config =  { path = "../../../put/cli-config", version = "=1.1.0" } 
+put-cli-output =  { path = "../../../put/cli-output", version = "=1.1.0" } 
+put-client =  { path = "../../../put/client", version = "=1.1.0" } 
+put-logger =  { path = "../../../put/logger", version = "=1.1.0" } 
+put-remote-wallet =  { path = "../../../put/remote-wallet", version = "=1.1.0" } 
+put-sdk = { path = "../../../put/sdk", version = "=1.1.0" } 
+ppl-token = { version = "1.0.0", path="../program", features = [ "no-entrypoint" ] }
+ppl-associated-token-account = { version = "1.0", path="../../associated-token-account/program", features = [ "no-entrypoint" ] }
+ppl-memo = { version = "1.0.0", path="../../memo/program", features = ["no-entrypoint"] }
+
+[[bin]]
+name = "ppl-token"
+path = "src/main.rs"

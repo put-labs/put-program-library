@@ -1,0 +1,18 @@
+[workspace]
+members = [
+    "memo/program",
+    "token/program",
+    "token/cli",
+    "associated-token-account/program",
+    "feature-proposal/program",
+    "feature-proposal/cli",
+    "nft/program",
+    "nft/cli",
+    "name/program",
+    "name/cli",
+    "multi-sig/cli",
+    "multi-sig/program",
+]
+
+[profile.dev]
+split-debuginfo = "unpacked"

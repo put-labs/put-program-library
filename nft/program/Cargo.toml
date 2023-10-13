@@ -1,0 +1,37 @@
+[package]
+name = "ppl-nft"
+version = "1.0.0"
+description = "PUT Program Library NFT"
+authors = ["put Maintainers <maintainers@put.foundation>"]
+repository = "https://github.com/put-labs/put-program-library"
+license = "Apache-2.0"
+edition = "2018"
+exclude = ["js/**"]
+
+[features]
+no-entrypoint = []
+test-bpf = []
+
+[dependencies]
+arrayref = "0.3.6"
+bytemuck = "1.7.2"
+num-derive = "0.3"
+num-traits = "0.2"
+num_enum = "0.5.2"
+put-program =  { path = "../../../put/sdk/program", version = "=1.1.0" }
+#put-program = { version = "1.11.0", path="../../../sdk/program" }
+thiserror = "1.0"
+borsh = "0.10.3"
+shank = "0.0.4"
+
+[dev-dependencies]
+lazy_static = "1.4.0"
+serial_test = "0.5.1"
+#put-program-test = "1.9.9"
+put-sdk = { path = "../../../put/sdk", version = "=1.1.0" } #"1.7.4"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]
